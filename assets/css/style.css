@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/* * Importações */
+@font-face {
+  font-family: MedievalSharp;
+  src: url(../fonts/MedievalSharp/MedievalSharp-Regular.ttf);
+}
+@font-face {
+  font-family: "Sour Gummy";
+  src: url(../fonts/Sour_Gummy/SourGummy-Regular.ttf);
+}
+
+/* * Configurações Principais */
+:root {
+  --cor-primaria: ;
+  --cor-secundária: ;
+  --cor-fundo: ;
+  --cor-texto: ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6em;
+}
+
+/* * Cabeçalho */
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 1rem 0;
+  background: var(--cor-primaria);
+  color: var(--cor-texto);
+}
+
+/* * Conteúdo */
+main {
+  min-height: 75vh;
+  background-color: var(--cor-secundária);
+}
+
+/* * Rodapé */
+footer {
+  padding: 1rem 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background: var(--cor-primaria);
+  color: var(--cor-texto);
+}
