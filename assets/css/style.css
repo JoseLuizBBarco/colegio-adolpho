@@ -44,6 +44,16 @@ h6 {
   color: var(--cor-texto);
 }
 
+a {
+  color: var(--cor-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cor-link-hover);
+  text-decoration: underline;
+}
+
 .icon {
   width: 1.5rem;
   height: 1.5rem;
@@ -78,6 +88,9 @@ main {
 }
 
 main section {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
   width: 100%;
   min-height: 75vh;
   padding: 1rem;
@@ -92,8 +105,22 @@ menu.container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  width: auto;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--cor-fundo);
+}
+
+menu.container a {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: var(--cor-texto);
+  transition: background-color 0.3s ease;
+}
+
+menu.container a:hover {
+  background-color: var(--cor-secundária);
 }
 
 /* * Rodapé */
