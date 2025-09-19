@@ -109,3 +109,51 @@ footer {
   background: var(--cor-footer);
   color: var(--cor-texto-claro);
 }
+
+.accessibility {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  padding: 0.5rem;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  z-index: 1000;
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  box-shadow: var(--sombra);
+  transform: translateY(-50%);
+}
+
+.accessibility button {
+  display: block;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  color: var(--cor-fundo);
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.accessibility button:hover {
+  color: var(--cor-link-hover);
+}
+
+.accessibility button:focus {
+  outline: 2px solid var(--cor-fundo);
+  outline-offset: 2px;
+}
+
+.accessibility-menu {
+  position: fixed;
+  top: 50%;
+  right: 3rem;
+  transform: translateY(-50%);
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  display: none;
+  z-index: 1000;
+}
