@@ -13,3 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentYearHTML.innerHTML = currentYear;
   }
 });
+
+function contato() {
+  document.getElementById("contato").style.display = "flex";
+}

@@ -14,6 +14,7 @@
 :root {
   --cor-primaria: #4a90e2;
   --cor-secundária: #d5dbdb;
+  --cor-terciária: #3333;
   --cor-fundo: #fff;
   --cor-gradiente: linear-gradient(90deg, #4a90e2 0%, #50e3c2 100%);
   --cor-footer: #222f3e;
@@ -21,9 +22,11 @@
   --cor-texto-claro: #bbb;
   --cor-link: #4a90e2;
   --cor-link-hover: #50e3c2;
+  --borda: 1px solid var(--cor-borda);
+  --cor-borda: #3333;
   --fonte-título: MedievalSharp, cursive;
   --fonte-texto: "Sour Gummy", sans-serif;
-  --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --sombra: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -101,7 +104,7 @@ main section:nth-child(odd) {
   background: var(--cor-secundária);
 }
 
-menu.container {
+menu {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -112,15 +115,32 @@ menu.container {
   background-color: var(--cor-fundo);
 }
 
-menu.container a {
+menu button {
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border: none;
+  border-radius: 10px;
   color: var(--cor-texto);
   transition: background-color 0.3s ease;
 }
 
-menu.container a:hover {
+menu button:hover {
+  box-shadow: var(--sombra);
   background-color: var(--cor-secundária);
+}
+
+.container-contato {
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  flex: auto;
+  flex-flow: row wrap;
+}
+
+.card {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: var(--cor-terciária);
 }
 
 /* * Rodapé */
