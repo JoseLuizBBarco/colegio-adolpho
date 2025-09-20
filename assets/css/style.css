@@ -234,9 +234,9 @@ footer {
 }
 
 .accessibility-menu {
-  display: flex;
-  flex-wrap: wrap; /* Permite quebra automática de linha */
-  justify-content: center; /* Centraliza os botões */
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 50%;
