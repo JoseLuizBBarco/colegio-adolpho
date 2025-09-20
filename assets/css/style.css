@@ -3,11 +3,11 @@
 /* * Importações */
 @font-face {
   font-family: MedievalSharp;
-  src: url(../fonts/MedievalSharp/MedievalSharp-Regular.ttf);
+  src: url(../fonts/MedievalSharp/MedievalSharp.ttf);
 }
 @font-face {
   font-family: "Sour Gummy";
-  src: url(../fonts/Sour_Gummy/SourGummy-Regular.ttf);
+  src: url(../fonts/Sour_Gummy/SourGummy.ttf);
 }
 
 /* * Configurações Principais */
@@ -38,6 +38,41 @@ body {
   font-family: var(--fonte-texto);
 }
 
+/* Alto contraste */
+body.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast main section {
+  background: #000 !important;
+  color: #fff !important;
+}
+body.high-contrast a {
+  color: #ff0 !important;
+}
+
+/* Corrige contraste dos ícones no modo alto contraste */
+body.high-contrast .icon,
+body.high-contrast svg {
+  fill: #ff0 !important;
+  color: #ff0 !important;
+}
+
+/* Garante contraste dos botões de acessibilidade */
+.accessibility,
+.accessibility-menu {
+  background: var(--cor-footer);
+  color: var(--cor-fundo);
+}
+
+body.high-contrast .accessibility,
+body.high-contrast .accessibility-menu {
+  background: #222 !important;
+  color: #ff0 !important;
+}
+
 h1,
 h2,
 h3,
@@ -59,10 +94,10 @@ header {
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: center;
-  text-align: center;
+  text-align: justify;
   width: 100%;
   height: auto;
-  padding: 1rem 0;
+  padding: 1rem;
   background: var(--cor-gradiente);
   color: var(--cor-texto);
 }
@@ -156,4 +191,29 @@ footer {
   box-shadow: var(--sombra);
   display: none;
   z-index: 1000;
+}
+
+@media (min-width: 750px) {
+  header {
+    flex-flow: row wrap;
+  }
+}
+
+/* Melhora a responsividade do menu de acessibilidade */
+@media (max-width: 600px) {
+  .accessibility-menu {
+    right: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.9em;
+  }
+}
+
+/* Corrige cor dos títulos no modo alto contraste */
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast h4,
+body.high-contrast h5,
+body.high-contrast h6 {
+  color: #ff0 !important;
 }

@@ -1,4 +1,18 @@
+// * Corrige a leitura do cookie e aplica o tamanho da fonte salvo, se existir
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+  return null;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Aplica o tamanho da fonte salvo no cookie, se existir
+  const tamanhoFonte = getCookie("fontSize");
+  if (tamanhoFonte) {
+    document.body.style.fontSize = tamanhoFonte;
+  }
+
   // * Footer
   const currentYear = new Date().getFullYear();
 
@@ -34,6 +48,11 @@ function decreaseFontSize() {
 
 function resetFontSize() {
   const body = document.body;
-  body.style.fontSize = "16px";
-  document.cookie = `fontSize=16px; path=/; max-age=31536000`; // ** max-age=1 ano
+  body.style.fontSize = "1em";
+  document.cookie = `fontSize=1em; path=/; max-age=31536000`; // ** max-age=1 ano
+}
+
+// Função para alternar alto contraste
+function toggleContrast() {
+  document.body.classList.toggle("high-contrast");
 }
