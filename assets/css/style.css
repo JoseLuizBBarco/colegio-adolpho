@@ -14,16 +14,20 @@
 :root {
   --cor-primaria: #4a90e2;
   --cor-secundária: #d5dbdb;
+  --cor-terciária: #3333;
   --cor-fundo: #fff;
+  --cor-fundo-semitransparente: #fffa;
   --cor-gradiente: linear-gradient(90deg, #4a90e2 0%, #50e3c2 100%);
   --cor-footer: #222f3e;
   --cor-texto: #333;
   --cor-texto-claro: #bbb;
   --cor-link: #4a90e2;
-  --cor-link-hover: #50e3c2;
-  --fonte-título: MedievalSharp, cursive;
+  --cor-link-hover: #47db80;
+  --cor-borda: #3333;
+  --borda: 1px solid var(--cor-borda);
+  --fonte-título: "MedievalSharp", cursive;
   --fonte-texto: "Sour Gummy", sans-serif;
-  --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --sombra: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -83,9 +87,23 @@ h6 {
   color: var(--cor-texto);
 }
 
+a {
+  color: var(--cor-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cor-link-hover);
+  text-decoration: underline;
+}
+
+p {
+  margin: 1rem 0;
+}
+
 .icon {
-  fill: var(--cor-texto);
-  vertical-align: middle;
+  padding: 0 0.5rem 0 0;
+  color: var(--cor-texto);
 }
 
 /* * Cabeçalho */
@@ -116,9 +134,14 @@ main {
 }
 
 main section {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   min-height: 75vh;
   padding: 1rem;
+  text-align: justify;
   background: var(--cor-fundo);
 }
 
@@ -126,12 +149,69 @@ main section:nth-child(odd) {
   background: var(--cor-secundária);
 }
 
-menu.container {
+#navMenu {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
+  width: auto;
+  min-height: auto;
   gap: 1rem;
-  padding: 1rem 0;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--cor-fundo-semitransparente);
+}
+
+#navMenu button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  color: var(--cor-texto);
+  transition: background-color 0.3s ease;
+}
+
+#navMenu button:hover {
+  box-shadow: var(--sombra);
+  background-color: var(--cor-secundária);
+}
+
+#mainContent {
+  flex-flow: column wrap;
+}
+
+#mainContent .container {
+  display: none;
+}
+
+#mainContent .active {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.container-home {
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+}
+
+.card {
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 10px;
+  background-color: var(--cor-terciária);
+  box-shadow: var(--sombra);
+}
+
+.card:hover {
+  transition: transform 0.3s ease in-out;
+  transform: translateY(-5px);
 }
 
 /* * Rodapé */

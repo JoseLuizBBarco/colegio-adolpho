@@ -12,17 +12,56 @@ document.addEventListener("DOMContentLoaded", () => {
   if (tamanhoFonte) {
     document.body.style.fontSize = tamanhoFonte;
   }
-
+  
+  // * Header
+  const header = document.querySelector("header");
+  if (header) {
+    header.innerHTML = `
+    <span class="college icon"></span>
+      <section class="location-info">
+        <h1>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h1>
+        <div class="location-info">
+        <p>
+          <span class="location icon"></span>
+          Astorga, Paraná, Brasil
+        </p>
+        </div>
+      </section>`;
+  
   // * Footer
-  const currentYear = new Date().getFullYear();
-
-  // Atualiza o texto do elemento com id 'currentYear', se existir
-  const yearSpan = document.getElementById("currentYear");
-  if (yearSpan) {
-    yearSpan.textContent = currentYear;
+  const footer = document.querySelector("footer");
+  if (footer) {
+    footer.innerHTML = `
+      <section class="copyright">
+        &copy; <span id="currentYear"></span>. Site desenvolvido por José Luiz
+        Bruiani Barco.
+      </section>`;
   }
+
+  // * Current Year
+  const currentYear = new Date().getFullYear();
 });
 
+// * Cards que mudam de acordo com o botão clicado
+const cards = document.querySelectorAll("#mainContent .container");
+
+// * Funções dos Botões de Navegação
+function inícioBotão() {
+  cards.forEach((card) => {
+    card.classList.remove("active");
+  });
+  const containerHome = document.querySelector("#container-home");
+  containerHome.classList.add("active");
+}
+
+function contatoBotão() {
+  cards.forEach((card) => {
+    card.classList.remove("active");
+  });
+  const containerContato = document.querySelector("#container-contato");
+  containerContato.classList.add("active");
+  
+// * Mostra e oculta as opções de acessibilidade de acordo com o clique do botão  
 function toggleAccessibilityMenu() {
   const menu = document.querySelector(".accessibility-menu");
   if (menu) {
@@ -30,6 +69,7 @@ function toggleAccessibilityMenu() {
   }
 }
 
+// * Aumenta o tamanho da fonte
 function increaseFontSize() {
   const body = document.body;
   const currentSize = window.getComputedStyle(body).fontSize;
@@ -38,6 +78,7 @@ function increaseFontSize() {
   document.cookie = `fontSize=${newSize}px; path=/; max-age=31536000`; // ** max-age=1 ano
 }
 
+// * Diminui o tamanho da fonte
 function decreaseFontSize() {
   const body = document.body;
   const currentSize = window.getComputedStyle(body).fontSize;
@@ -46,6 +87,7 @@ function decreaseFontSize() {
   document.cookie = `fontSize=${newSize}px; path=/; max-age=31536000`; // ** max-age=1 ano
 }
 
+// * Reseta o tamanho da fonte
 function resetFontSize() {
   const body = document.body;
   body.style.fontSize = "1em";

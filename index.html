@@ -12,66 +12,74 @@
     />
   </head>
   <body>
-    <header>
-      <span class="college icon"></span>
-      <section class="location-info">
-        <h1>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h1>
-        <div class="location-info">
-          <span class="location icon"></span>
-          <p>Astorga, Paraná, Brasil</p>
-        </div>
-      </section>
-    </header>
+    <header></header>
     <main>
-      <section>
-        <menu class="container"></menu>
+      <section id="mainContent">
+        <article id="navMenu">
+          <button onclick="inícioBotão()">Início</button>
+          <button onclick="contatoBotão()">Contato</button>
+        </article>
+        <article id="container-home" class="container container-home active">
+          <h1>Bem-vindo ao Colégio Adolpho</h1>
+          <p>
+            Nosso colégio oferece uma educação de qualidade com foco no
+            desenvolvimento integral do aluno.
+          </p>
+        </article>
+        <article
+          id="container-contato"
+          class="container container-contato inactive"
+        >
+          <div class="card card-contato">
+            <h3>
+              <span
+                class="location icon"
+                style="color: #00f; padding: 1rem"
+              ></span>
+              Localização
+            </h3>
+            <p>
+              <strong>Endereço:</strong><br />
+              <a
+                href="https://maps.app.goo.gl/ibm1BTRneGfr4zvdA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Rua Nossa Senhora Aparecida, 337 <br />
+                Jardim Paraná <br />
+                86730-000 - Astorga, PR
+              </a>
+            </p>
+            <p>
+              <span class="phone icon" style="color: #0f0"></span
+              ><strong>Telefone:</strong>
+              <a href="tel:+554432347076">(44) 3234 - 7076</a>
+            </p>
+          </div>
+          <div class="card card-contato inactive">
+            <h3>Informações Administrativas</h3>
+            <p>
+              <strong>Núcleo Regional de Educação:</strong><br />NRE Maringá
+            </p>
+            <p>
+              <strong>Dependência Administrativa</strong><br />Governo do Estado
+              do Paraná
+            </p>
+            <p><strong>Código INEP:</strong><br />41018982</p>
+          </div>
+          <div class="card card-contato inactive">
+            <h3>Horário de Funcionamento</h3>
+            <p><strong>Segunda a Sexta-feira:</strong></p>
+            <p>07:00 - 11:00 e 13:00 - 17:00</p>
+            <p><strong>Sábado:</strong></p>
+            <p>07:00 - 11:00</p>
+            <p><strong>Domingo:</strong></p>
+            <p>Fechado</p>
+          </div>
+        </article>
       </section>
     </main>
-    <footer>
-      <section class="accessibility">
-        <button
-          id="accessibilityButton"
-          aria-label="Acessibilidade"
-          onclick="toggleAccessibilityMenu()"
-        >
-          <span class="accessibility icon"></span>
-        </button>
-        <div class="accessibility-menu">
-          <button
-            id="increaseFont"
-            aria-label="Aumentar fonte"
-            onclick="increaseFontSize()"
-          >
-            <span class="increase-font icon"></span>
-          </button>
-          <button
-            id="decreaseFont"
-            aria-label="Diminuir fonte"
-            onclick="decreaseFontSize()"
-          >
-            <span class="decrease-font icon"></span>
-          </button>
-          <button
-            id="resetFont"
-            aria-label="Redefinir fonte"
-            onclick="resetFontSize()"
-          >
-            <span class="reset-font icon"></span>
-          </button>
-          <button
-            id="toggleContrast"
-            aria-label="Alternar contraste"
-            onclick="toggleContrast()"
-          >
-            <span class="contrast icon"></span>
-          </button>
-        </div>
-      </section>
-      <section class="copyright">
-        &copy; <span id="currentYear"></span>. Site desenvolvido por José Luiz
-        Bruiani Barco.
-      </section>
-    </footer>
+    <footer></footer>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/svg.js"></script>
   </body>
