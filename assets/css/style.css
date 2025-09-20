@@ -17,12 +17,12 @@
   --cor-terciária: #3333;
   --cor-fundo: #fff;
   --cor-fundo-semitransparente: #fffa;
-  --cor-gradiente: linear-gradient(90deg, #4a90e2 0%, #50e3c2 100%);
+  --cor-gradiente: linear-gradient(90deg, #0077ff 0%, #00ffc8 100%);
   --cor-footer: #222f3e;
   --cor-texto: #333;
   --cor-texto-claro: #bbb;
-  --cor-link: #4a90e2;
-  --cor-link-hover: #47db80;
+  --cor-link: #214166;
+  --cor-link-hover: #2a814b;
   --cor-borda: #3333;
   --borda: 1px solid var(--cor-borda);
   --fonte-título: "MedievalSharp", cursive;
@@ -40,41 +40,6 @@ body {
   line-height: 1.6em;
   font-size: 0.8em;
   font-family: var(--fonte-texto);
-}
-
-/* Alto contraste */
-body.high-contrast {
-  background: #000 !important;
-  color: #fff !important;
-}
-body.high-contrast header,
-body.high-contrast footer,
-body.high-contrast main section {
-  background: #000 !important;
-  color: #fff !important;
-}
-body.high-contrast a {
-  color: #ff0 !important;
-}
-
-/* Corrige contraste dos ícones no modo alto contraste */
-body.high-contrast .icon,
-body.high-contrast svg {
-  fill: #ff0 !important;
-  color: #ff0 !important;
-}
-
-/* Garante contraste dos botões de acessibilidade */
-.accessibility,
-.accessibility-menu {
-  background: var(--cor-footer);
-  color: var(--cor-fundo);
-}
-
-body.high-contrast .accessibility,
-body.high-contrast .accessibility-menu {
-  background: #222 !important;
-  color: #ff0 !important;
 }
 
 h1,
@@ -104,6 +69,10 @@ p {
 .icon {
   padding: 0 0.5rem 0 0;
   color: var(--cor-texto);
+}
+
+.active {
+  display: flex;
 }
 
 /* * Cabeçalho */
@@ -175,6 +144,7 @@ main section:nth-child(odd) {
 }
 
 #navMenu button:hover {
+  cursor: pointer;
   box-shadow: var(--sombra);
   background-color: var(--cor-secundária);
 }
@@ -183,6 +153,7 @@ main section:nth-child(odd) {
   flex-flow: column wrap;
 }
 
+/* * Ajustes para os containers */
 #mainContent .container {
   display: none;
 }
@@ -228,11 +199,12 @@ footer {
 .accessibility {
   position: fixed;
   top: 50%;
+  z-index: 1000;
   right: 0;
+  width: 50px;
   padding: 0.5rem;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  z-index: 1000;
   background: var(--cor-primaria);
   color: var(--cor-fundo);
   box-shadow: var(--sombra);
@@ -240,12 +212,14 @@ footer {
 }
 
 .accessibility button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   border: none;
   border-radius: 10px;
   color: var(--cor-fundo);
-  margin: 0.5rem 0;
+  margin: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
 }
@@ -260,40 +234,36 @@ footer {
 }
 
 .accessibility-menu {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebra automática de linha */
+  justify-content: center; /* Centraliza os botões */
+  align-items: center;
   position: fixed;
   top: 50%;
-  right: 3rem;
-  transform: translateY(-50%);
-  background: var(--cor-primaria);
-  color: var(--cor-fundo);
+  right: 4rem;
+  z-index: 1000;
   padding: 1rem;
   border-radius: 8px;
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
   box-shadow: var(--sombra);
-  display: none;
-  z-index: 1000;
+  transform: translateY(-50%);
+  width: auto;
+  height: auto;
+  min-width: 200px;
+  max-width: 100%;
+  gap: 1rem;
 }
 
 @media (min-width: 750px) {
+  /* * Header */
   header {
     flex-flow: row wrap;
   }
-}
 
-/* Melhora a responsividade do menu de acessibilidade */
-@media (max-width: 600px) {
+  /* * Footer */
   .accessibility-menu {
-    right: 0.5rem;
-    padding: 0.5rem;
-    font-size: 0.9em;
+    max-height: 50vh;
+    right: 5rem;
   }
-}
-
-/* Corrige cor dos títulos no modo alto contraste */
-body.high-contrast h1,
-body.high-contrast h2,
-body.high-contrast h3,
-body.high-contrast h4,
-body.high-contrast h5,
-body.high-contrast h6 {
-  color: #ff0 !important;
 }

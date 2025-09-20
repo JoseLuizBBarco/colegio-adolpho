@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (tamanhoFonte) {
     document.body.style.fontSize = tamanhoFonte;
   }
-  
+
   // * Header
   const header = document.querySelector("header");
   if (header) {
@@ -21,17 +21,34 @@ document.addEventListener("DOMContentLoaded", () => {
       <section class="location-info">
         <h1>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h1>
         <div class="location-info">
-        <p>
-          <span class="location icon"></span>
-          Astorga, Paraná, Brasil
-        </p>
+          <p>
+            <span class="location icon"></span>
+            Astorga, Paraná, Brasil
+          </p>
         </div>
       </section>`;
-  
+  }
+
   // * Footer
   const footer = document.querySelector("footer");
   if (footer) {
     footer.innerHTML = `
+      <section class="accessibility">
+        <button onclick="toggleAccessibilityMenu()">
+          <span class="accessibility"></span>
+        </button>
+        <div class="accessibility-menu">
+          <button onclick="increaseFontSize()">
+            <span class="increase-font"></span>
+          </button>
+          <button onclick="decreaseFontSize()">
+            <span class="decrease-font"></span>
+          </button>
+          <button onclick="resetFontSize()">
+            <span class="reset-font"></span>
+          </button>
+        </div>
+      </section>
       <section class="copyright">
         &copy; <span id="currentYear"></span>. Site desenvolvido por José Luiz
         Bruiani Barco.
@@ -40,32 +57,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // * Current Year
   const currentYear = new Date().getFullYear();
+  const yearSpan = document.getElementById("currentYear");
+  if (yearSpan) {
+    yearSpan.textContent = currentYear;
+  }
 });
 
 // * Cards que mudam de acordo com o botão clicado
-const cards = document.querySelectorAll("#mainContent .container");
+function toggleContainer(containerId) {
+  const cards = document.querySelectorAll("#mainContent .container");
+  cards.forEach((card) => {
+    card.classList.remove("active");
+    card.classList.add("inactive");
+  });
+  const container = document.getElementById(containerId);
+  if (container) {
+    container.classList.add("active");
+    container.classList.remove("inactive");
+  }
+}
 
 // * Funções dos Botões de Navegação
 function inícioBotão() {
-  cards.forEach((card) => {
-    card.classList.remove("active");
-  });
-  const containerHome = document.querySelector("#container-home");
-  containerHome.classList.add("active");
+  toggleContainer("container-home");
 }
 
 function contatoBotão() {
-  cards.forEach((card) => {
-    card.classList.remove("active");
-  });
-  const containerContato = document.querySelector("#container-contato");
-  containerContato.classList.add("active");
-  
-// * Mostra e oculta as opções de acessibilidade de acordo com o clique do botão  
+  toggleContainer("container-contato");
+}
+
+// * Mostra e oculta as opções de acessibilidade de acordo com o clique do botão
 function toggleAccessibilityMenu() {
   const menu = document.querySelector(".accessibility-menu");
   if (menu) {
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
+    const isHidden = menu.style.display === "none" || menu.style.display === "";
+    menu.style.display = isHidden ? "flex" : "none";
   }
 }
 
@@ -90,11 +116,6 @@ function decreaseFontSize() {
 // * Reseta o tamanho da fonte
 function resetFontSize() {
   const body = document.body;
-  body.style.fontSize = "1em";
-  document.cookie = `fontSize=1em; path=/; max-age=31536000`; // ** max-age=1 ano
-}
-
-// Função para alternar alto contraste
-function toggleContrast() {
-  document.body.classList.toggle("high-contrast");
+  body.style.fontSize = "16px";
+  document.cookie = `fontSize=16px; path=/; max-age=31536000`; // ** max-age=1 ano
 }
