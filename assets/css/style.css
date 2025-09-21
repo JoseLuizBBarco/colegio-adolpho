@@ -13,10 +13,11 @@
 /* * Configurações Principais */
 :root {
   --cor-primaria: #4a90e2;
+  --cor-primaria-semitransparente: #4a91e257;
   --cor-secundária: #d5dbdb;
   --cor-terciária: #3333;
   --cor-fundo: #fff;
-  --cor-fundo-semitransparente: #fffa;
+  --cor-fundo-semitransparente: #ffffff57;
   --cor-gradiente: linear-gradient(90deg, #0077ff 0%, #00ffc8 100%);
   --cor-footer: #222f3e;
   --cor-texto: #333;
@@ -215,12 +216,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: none;
   border: none;
   border-radius: 10px;
-  color: var(--cor-fundo);
   margin: 0.5rem;
   padding: 0.5rem;
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
   cursor: pointer;
 }
 
@@ -244,7 +245,7 @@ footer {
   z-index: 1000;
   padding: 1rem;
   border-radius: 8px;
-  background: var(--cor-primaria);
+  background: var(--cor-primaria-semitransparente);
   color: var(--cor-fundo);
   box-shadow: var(--sombra);
   transform: translateY(-50%);
