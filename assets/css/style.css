@@ -150,7 +150,7 @@ main section:nth-child(odd) {
 }
 
 #mainContent {
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
 }
 
 /* * Ajustes para os containers */
@@ -160,16 +160,20 @@ main section:nth-child(odd) {
 
 #mainContent .active {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: space-around;
 }
 
-.container-home {
-  flex-flow: column wrap;
+#container-home {
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   text-align: center;
   max-width: 800px;
+}
+
+#container-contato {
+  flex-flow: auto;
 }
 
 .card {
@@ -256,8 +260,13 @@ footer {
 }
 
 @media (min-width: 750px) {
-  /* * Header */
+  /* * Cabeçalho */
   header {
+    flex-flow: row wrap;
+  }
+
+  /* * Conteúdo Principal */
+  #mainContent .active {
     flex-flow: row wrap;
   }
 
