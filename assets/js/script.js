@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     header.innerHTML = `
     <span class="college icon"></span>
       <section class="location-info">
-        <h1>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h1>
+        <h2>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h2>
         <div class="location-info">
           <p>
             <span class="location icon"></span>
@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelector("footer");
   if (footer) {
     footer.innerHTML = `
+      <section class="colégio">
+        <h3>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h3>
+        <p>Educação de qualidade em Astorga, Paraná</p>
+      </section>
       <section class="accessibility">
         <button onclick="toggleAccessibilityMenu()">
           <span class="accessibility"></span>
@@ -49,9 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
         </div>
       </section>
-      <section class="copyright">
-        &copy; <span id="currentYear"></span>. Site desenvolvido por José Luiz
-        Bruiani Barco.
+      <section class="reference">
+        Site desenvolvido por José Luiz
+        Bruiani Barco para fins acadêmicos. Dados baseados no Censo Escolar e INEP.
       </section>`;
   }
 

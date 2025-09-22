@@ -50,7 +50,6 @@ h4,
 h5,
 h6 {
   font-family: var(--fonte-título);
-  color: var(--cor-texto);
 }
 
 a {
@@ -80,12 +79,12 @@ p {
 header {
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: justify;
   width: 100%;
   height: auto;
-  padding: 1rem;
+  padding: 3rem;
   background: var(--cor-gradiente);
   color: var(--cor-texto);
 }
