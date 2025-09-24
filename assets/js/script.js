@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <button onclick="resetFontSize()">
             <span class="reset-font"></span>
           </button>
+          <button onclick="contrast()">
+            <span class="contrast"></span>
+          </button>
         </div>
       </section>
       <section class="reference">
