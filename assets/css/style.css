@@ -176,7 +176,13 @@ main section:nth-child(odd) {
   flex-flow: auto;
 }
 
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .card {
+  flex: auto;
   padding: 2rem;
   margin: 1rem;
   border-radius: 10px;
@@ -185,8 +191,32 @@ main section:nth-child(odd) {
 }
 
 .card:hover {
-  transition: transform 0.3s ease in-out;
   transform: translateY(-5px);
+}
+
+.Ensino {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: var(--cor-secundária);
+}
+
+.cardsDeEnsino {
+  display: flex;
+  flex: auto;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-ensino {
+  width: 100%;
+}
+
+.disciplinas .card-ensino {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
 
 /* * Rodapé */
@@ -266,8 +296,29 @@ footer {
   }
 
   /* * Conteúdo Principal */
+  .container {
+    flex-flow: row wrap;
+  }
+
   #mainContent .active {
     flex-flow: row wrap;
+  }
+
+  .Ensino {
+    margin: 2rem;
+  }
+
+  .cardsDeEnsino {
+    flex-flow: row wrap;
+  }
+
+  .card-ensino {
+    max-width: 40%;
+  }
+
+  .disciplinas .card-ensino {
+    width: auto;
+    max-width: none;
   }
 
   /* * Footer */
