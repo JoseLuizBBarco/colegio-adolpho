@@ -194,12 +194,6 @@ main section:nth-child(odd) {
   transform: translateY(-5px);
 }
 
-.Ensino {
-  padding: 2rem;
-  border-radius: 10px;
-  background-color: var(--cor-secundária);
-}
-
 .cardsDeEnsino {
   display: flex;
   flex: auto;
@@ -302,10 +296,6 @@ footer {
 
   #mainContent .active {
     flex-flow: row wrap;
-  }
-
-  .Ensino {
-    margin: 2rem;
   }
 
   .cardsDeEnsino {

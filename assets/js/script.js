@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("header");
   if (header) {
     header.innerHTML = `
-    <span class="college icon"></span>
+    <span class="college"></span>
       <section class="location-info">
         <h2>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h2>
         <div class="location-info">
           <p>
-            <span class="location icon"></span>
+            <span class="location"></span>
             Astorga, Paraná, Brasil
           </p>
         </div>
