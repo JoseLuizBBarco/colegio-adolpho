@@ -259,6 +259,21 @@ footer {
   gap: 1rem;
 }
 
+.card-infraestrutura {
+  padding: 0;
+}
+
+.card-infraestrutura img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-infraestrutura h3,
+.card-infraestrutura p {
+  margin: 1rem;
+}
+
 @media (min-width: 750px) {
   /* * Cabeçalho */
   header {
