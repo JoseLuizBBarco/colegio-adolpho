@@ -85,7 +85,9 @@ function toggleContainer(containerId) {
 function inícioBotão() {
   toggleContainer("container-home");
 }
-
+function infraestruturaBotão() {
+  toggleContainer("container-infraestrutura");
+}
 function contatoBotão() {
   toggleContainer("container-contato");
 }
