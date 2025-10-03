@@ -7,22 +7,32 @@ function getCookie(name) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Aplica o tamanho da fonte salvo no cookie, se existir
+  // * Aplica informações salvas em cookies
   const tamanhoFonte = getCookie("fontSize");
   if (tamanhoFonte) {
     document.body.style.fontSize = tamanhoFonte;
+  }
+  const contrasteAlto = getCookie("highContrast");
+  if (contrasteAlto === "true") {
+    document.body.classList.add("high-contrast");
+  }
+  const paginaAtual = getCookie("page");
+  if (paginaAtual) {
+    toggleContainer(`container-${paginaAtual}`);
+  } else {
+    toggleContainer("container-home");
   }
 
   // * Header
   const header = document.querySelector("header");
   if (header) {
     header.innerHTML = `
-    <span class="college icon"></span>
+    <span class="college"></span>
       <section class="location-info">
         <h2>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h2>
         <div class="location-info">
           <p>
-            <span class="location icon"></span>
+            <span class="location"></span>
             Astorga, Paraná, Brasil
           </p>
         </div>
@@ -50,6 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
           <button onclick="resetFontSize()">
             <span class="reset-font"></span>
+          </button>
+          <button onclick="contrast()">
+            <span class="contrast"></span>
           </button>
         </div>
       </section>
@@ -84,12 +97,15 @@ function toggleContainer(containerId) {
 // * Funções dos Botões de Navegação
 function inícioBotão() {
   toggleContainer("container-home");
+  document.cookie = `page=home; path=/; max-age=31536000`; // ** max-age=1 ano
 }
 function infraestruturaBotão() {
   toggleContainer("container-infraestrutura");
+  document.cookie = `page=infraestrutura; path=/; max-age=31536000`; // ** max-age=1 ano
 }
 function contatoBotão() {
   toggleContainer("container-contato");
+  document.cookie = `page=contato; path=/; max-age=31536000`; // ** max-age=1 ano
 }
 
 // * Mostra e oculta as opções de acessibilidade de acordo com o clique do botão
@@ -124,4 +140,14 @@ function resetFontSize() {
   const body = document.body;
   body.style.fontSize = "16px";
   document.cookie = `fontSize=16px; path=/; max-age=31536000`; // ** max-age=1 ano
+}
+
+// * Contraste
+function contrast() {
+  document.body.classList.toggle("high-contrast");
+  if (document.body.classList.contains("high-contrast")) {
+    document.cookie = `highContrast=true; path=/; max-age=31536000`; // ** max-age=1 ano
+  } else {
+    document.cookie = `highContrast=false; path=/; max-age=31536000`; // ** max-age=1 ano
+  }
 }
