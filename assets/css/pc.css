@@ -1,0 +1,32 @@
+/* * Cabeçalho */
+header {
+  flex-flow: row wrap;
+}
+
+/* * Conteúdo Principal */
+.container {
+  flex-flow: row wrap;
+}
+
+#mainContent .active {
+  flex-flow: row wrap;
+}
+
+.cardsDeEnsino {
+  flex-flow: row wrap;
+}
+
+.card-ensino {
+  max-width: 40%;
+}
+
+.disciplinas .card-ensino {
+  width: auto;
+  max-width: none;
+}
+
+/* * Footer */
+.accessibility-menu {
+  max-height: 50vh;
+  right: 5rem;
+}
