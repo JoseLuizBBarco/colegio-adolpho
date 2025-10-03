@@ -209,6 +209,40 @@ main section:nth-child(odd) {
   width: 100%;
 }
 
+.card-infraestrutura img,
+.card-ensino img {
+  margin: none;
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-infraestrutura {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+  padding: 0;
+  text-align: center;
+}
+
+.card-infraestrutura:hover {
+  transform: translateY(-5px);
+}
+
+.card-infraestrutura div {
+  padding: 1rem;
+}
+
+.card-infraestrutura h3 {
+  margin: 1rem 0 0.5rem 0;
+}
+
+.card-infraestrutura .icon {
+  width: 48px;
+}
+
 .disciplinas .card-ensino {
   display: flex;
   justify-content: space-around;

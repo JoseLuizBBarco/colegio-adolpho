@@ -46,6 +46,36 @@ document.addEventListener("DOMContentLoaded", () => {
       src: "assets/icons/book.svg",
       alt: "Ícone de livro",
     },
+    {
+      className: "books",
+      src: "assets/icons/books.svg",
+      alt: "Ícone de uma estante com livros",
+    },
+    {
+      className: "pc",
+      src: "assets/icons/pc.svg",
+      alt: "Ícone de computador",
+    },
+    {
+      className: "microscopio",
+      src: "assets/icons/microscopio.svg",
+      alt: "Ícone de microscópio",
+    },
+    {
+      className: "garfo-faca",
+      src: "assets/icons/garfo-faca.svg",
+      alt: "Ícone de garfo e faca",
+    },
+    {
+      className: "predio",
+      src: "assets/icons/predio.svg",
+      alt: "Ícone de prédio",
+    },
+    {
+      className: "cadeira-rodas",
+      src: "assets/icons/cadeira-rodas.svg",
+      alt: "Ícone de cadeira de rodas",
+    },
   ];
 
   icons.forEach((icon) => {

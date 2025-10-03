@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contrasteAlto === "true") {
     document.body.classList.add("high-contrast");
   }
+  const paginaAtual = getCookie("page");
+  if (paginaAtual) {
+    toggleContainer(`container-${paginaAtual}`);
+  } else {
+    toggleContainer("container-home");
+  }
 
   // * Header
   const header = document.querySelector("header");
@@ -91,10 +97,16 @@ function toggleContainer(containerId) {
 // * Funções dos Botões de Navegação
 function inícioBotão() {
   toggleContainer("container-home");
+  document.cookie = `page=home; path=/; max-age=31536000`; // ** max-age=1 ano
+}
+function infraestruturaBotão() {
+  toggleContainer("container-infraestrutura");
+  document.cookie = `page=infraestrutura; path=/; max-age=31536000`; // ** max-age=1 ano
 }
 
 function contatoBotão() {
   toggleContainer("container-contato");
+  document.cookie = `page=contato; path=/; max-age=31536000`; // ** max-age=1 ano
 }
 
 // * Mostra e oculta as opções de acessibilidade de acordo com o clique do botão
