@@ -103,6 +103,7 @@ function infraestruturaBotão() {
   toggleContainer("container-infraestrutura");
   document.cookie = `page=infraestrutura; path=/; max-age=31536000`; // ** max-age=1 ano
 }
+
 function contatoBotão() {
   toggleContainer("container-contato");
   document.cookie = `page=contato; path=/; max-age=31536000`; // ** max-age=1 ano
