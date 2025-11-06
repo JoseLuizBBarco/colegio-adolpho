@@ -145,10 +145,13 @@ function resetFontSize() {
 
 // * Contraste
 function contrast() {
-  document.body.classList.toggle("high-contrast");
-  if (document.body.classList.contains("high-contrast")) {
-    document.cookie = `highContrast=true; path=/; max-age=31536000`; // ** max-age=1 ano
-  } else {
-    document.cookie = `highContrast=false; path=/; max-age=31536000`; // ** max-age=1 ano
-  }
+  const body = document.body;
+  const isHighContrast = body.classList.toggle("high-contrast"); // Alterna a classe
+  document.cookie = `highContrast=${isHighContrast}; path=/; max-age=31536000`; // Salva o estado no cookie
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const contrasteAlto = getCookie("highContrast");
+  if (contrasteAlto === "true") {
+    document.body.classList.add("high-contrast");
+  }
+});

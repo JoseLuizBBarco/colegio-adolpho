@@ -16,7 +16,7 @@
   --cor-primaria-semitransparente: #4a91e257;
   --cor-secundária: #d5dbdb;
   --cor-terciária: #3333;
-  --cor-quaternária: #07f;
+  --cor-quaternária: #0077ff;
   --cor-quinária: #0f7;
   --cor-fundo: #fff;
   --cor-fundo-semitransparente: #ffffff57;
@@ -30,11 +30,18 @@
   --cor-texto-claro: #bbb;
   --cor-link: var(--cor-quaternária);
   --cor-link-hover: var(--cor-quinária);
-  --cor-borda: #3333;
-  --borda: 1px solid var(--cor-borda);
+  --borda: 1px solid #3333;
   --fonte-título: "MedievalSharp", cursive;
   --fonte-texto: "Sour Gummy", sans-serif;
   --sombra: 0 4px 6px #0006;
+  --cor-contraste-gradiente: linear-gradient(90deg, #003e86 0%, #005628 100%);
+  --cor-contraste-fundo: #000000;
+  --cor-contraste-texto: #ffffff;
+  --cor-contraste-link: #00bfff;
+  --cor-contraste-link-hover: #ffff00;
+  --cor-contraste-borda: #ff4500;
+  --cor-contraste-fundo-secundario: #2c2c2c;
+  --sombra-contraste: 0 0 10px #fff6;
 }
 
 * {
@@ -101,7 +108,29 @@ p {
 
 /* * Alto contraste */
 .high-contrast {
-  color: lightgray;
+  background-color: var(--cor-contraste-fundo);
+  color: var(--cor-contraste-texto);
+}
+.high-contrast header {
+  background: var(--cor-contraste-gradiente);
+}
+.high-contrast a {
+  color: var(--cor-contraste-link);
+}
+.high-contrast a:hover {
+  color: var(--cor-contraste-link-hover);
+}
+.high-contrast .card {
+  box-shadow: var(--sombra-contraste);
+}
+.high-contrast .card-alternado {
+  border-left: 5px solid var(--cor-contraste-borda);
+}
+.high-contrast main section {
+  background: var(--cor-contraste-fundo);
+}
+.high-contrast main section:nth-child(odd) {
+  background: var(--cor-contraste-fundo-secundario);
 }
 
 /* * Cards intercalados */
@@ -242,7 +271,6 @@ main section:nth-child(odd) {
   width: 100%;
 }
 
-.card-infraestrutura img,
 .card-ensino img {
   margin: none;
   width: 100%;
@@ -256,7 +284,7 @@ main section:nth-child(odd) {
   justify-content: space-between;
   align-items: center;
   max-width: 300px;
-  padding: 0;
+  padding: 10px;
   text-align: center;
 }
 
@@ -345,4 +373,39 @@ footer {
   min-width: 200px;
   max-width: 100%;
   gap: 1rem;
+}
+
+@media (min-width: 990px) {
+  /* * Cabeçalho */
+  header {
+    flex-flow: row wrap;
+  }
+
+  /* * Conteúdo Principal */
+  .container {
+    flex-flow: row wrap;
+  }
+
+  #mainContent .active {
+    flex-flow: row wrap;
+  }
+
+  .cardsDeEnsino {
+    flex-flow: row wrap;
+  }
+
+  .card-ensino {
+    max-width: 40%;
+  }
+
+  .disciplinas .card-ensino {
+    width: auto;
+    max-width: none;
+  }
+
+  /* * Footer */
+  .accessibility-menu {
+    max-height: 50vh;
+    right: 5rem;
+  }
 }
