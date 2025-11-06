@@ -16,19 +16,25 @@
   --cor-primaria-semitransparente: #4a91e257;
   --cor-secundária: #d5dbdb;
   --cor-terciária: #3333;
+  --cor-quaternária: #07f;
+  --cor-quinária: #0f7;
   --cor-fundo: #fff;
   --cor-fundo-semitransparente: #ffffff57;
-  --cor-gradiente: linear-gradient(90deg, #0077ff 0%, #00ffc8 100%);
+  --cor-gradiente: linear-gradient(
+    90deg,
+    var(--cor-quaternária) 0%,
+    var(--cor-quinária) 100%
+  );
   --cor-footer: #222f3e;
   --cor-texto: #333;
   --cor-texto-claro: #bbb;
-  --cor-link: #214166;
-  --cor-link-hover: #2a814b;
+  --cor-link: var(--cor-quaternária);
+  --cor-link-hover: var(--cor-quinária);
   --cor-borda: #3333;
   --borda: 1px solid var(--cor-borda);
   --fonte-título: "MedievalSharp", cursive;
   --fonte-texto: "Sour Gummy", sans-serif;
-  --sombra: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --sombra: 0 4px 6px #0006;
 }
 
 * {
@@ -95,7 +101,16 @@ p {
 
 /* * Alto contraste */
 .high-contrast {
-  color: yellow;
+  color: lightgray;
+}
+
+/* * Cards intercalados */
+.card-alternado {
+  border-left: 5px solid var(--cor-quaternária);
+}
+
+.card-alternado:nth-child(odd) {
+  border-left: 5px solid var(--cor-quinária);
 }
 
 /* * Cabeçalho */
