@@ -30,17 +30,17 @@
   --cor-texto-claro: #bbb;
   --cor-link: var(--cor-quaternária);
   --cor-link-hover: var(--cor-quinária);
-  --borda: 1px solid #3333;
+  --borda: 2px solid #3333;
   --fonte-título: "MedievalSharp", cursive;
   --fonte-texto: "Sour Gummy", sans-serif;
   --sombra: 0 4px 6px #0006;
-  --cor-contraste-gradiente: linear-gradient(90deg, #003e86 0%, #005628 100%);
-  --cor-contraste-fundo: #000000;
-  --cor-contraste-texto: #ffffff;
-  --cor-contraste-link: #00bfff;
-  --cor-contraste-link-hover: #ffff00;
-  --cor-contraste-borda: #ff4500;
-  --cor-contraste-fundo-secundario: #2c2c2c;
+  --cor-contraste-gradiente: linear-gradient(90deg, #038 0%, #052 100%);
+  --cor-contraste-fundo: #222;
+  --cor-contraste-texto: #fff;
+  --cor-contraste-link: #0bf;
+  --cor-contraste-link-hover: #ff0;
+  --cor-contraste-borda: #f40;
+  --cor-contraste-fundo-secundario: #333;
   --sombra-contraste: 0 0 10px #fff6;
 }
 
@@ -99,7 +99,7 @@ p {
 }
 
 .icon {
-  padding: 0.5rem;
+  margin: 0 1rem;
 }
 
 .active {
@@ -145,14 +145,40 @@ p {
 /* * Cabeçalho */
 header {
   display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
   align-items: center;
   text-align: justify;
   width: 100%;
   height: auto;
   padding: 3rem;
   background: var(--cor-gradiente);
+}
+
+nav[aria-label="Conteúdo do Header"] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+nav[aria-label="Botões"] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+nav[aria-label="Botões"] button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+nav[aria-label="Botões"] button:hover {
+  border: var(--borda);
+  box-shadow: var(--sombra);
 }
 
 div.location-info {
@@ -338,6 +364,7 @@ footer {
 
 .accessibility button {
   display: flex;
+  flex: 1 0 50px;
   justify-content: center;
   align-items: center;
   border: none;
@@ -354,9 +381,13 @@ footer {
   outline-offset: 2px;
 }
 
+.accessibility button .icon {
+  margin: 0;
+}
+
 .accessibility-menu {
   display: none;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   position: fixed;

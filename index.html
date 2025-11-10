@@ -18,7 +18,25 @@
     />
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav aria-label="Conteúdo do Header">
+        <span class="icon college"></span>
+        <section class="location-info">
+          <h2>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h2>
+          <div class="location-info">
+            <p>
+              <span class="icon location"></span>
+              Astorga, Paraná, Brasil
+            </p>
+          </div>
+        </section>
+      </nav>
+      <nav aria-label="Botões">
+        <button onclick="contrast()">
+          <span id="iconContrast" class="icon moon"></span>
+        </button>
+      </nav>
+    </header>
     <main>
       <section id="mainContent">
         <article id="navMenu">
@@ -38,27 +56,29 @@
           class="container container-infraestrutura inactive"
         >
           <div class="card card-infraestrutura">
-            <h3><span class="books"></span>Biblioteca</h3>
+            <h3><span class="icon books"></span>Biblioteca</h3>
             <p>Espaço de leitura e pesquisa.</p>
           </div>
           <div class="card card-infraestrutura">
-            <h3><span class="pc"></span>Laboratório de Informática</h3>
+            <h3><span class="icon pc"></span>Laboratório de Informática</h3>
             <p>Tecnologia Educacional</p>
           </div>
           <div class="card card-infraestrutura">
-            <h3><span class="microscopio"></span>Laboratório de Ciências</h3>
+            <h3>
+              <span class="icon microscopio"></span>Laboratório de Ciências
+            </h3>
             <p>Experimentos Práticos.</p>
           </div>
           <div class="card card-infraestrutura">
-            <h3><span class="garfo-faca"></span>Refeitório</h3>
+            <h3><span class="icon garfo-faca"></span>Refeitório</h3>
             <p>Alimentação Escolar</p>
           </div>
           <div class="card card-infraestrutura">
-            <h3><span class="quadra"></span>Quadra de Esportes</h3>
+            <h3><span class="icon quadra"></span>Quadra de Esportes</h3>
             <p>Atividades Físicas</p>
           </div>
           <div class="card card-infraestrutura">
-            <h3><span class="cadeira-rodas"></span>Acessibilidade</h3>
+            <h3><span class="icon cadeira-rodas"></span>Acessibilidade</h3>
             <p>Inclusão Garantida</p>
           </div>
         </article>
@@ -68,7 +88,7 @@
         >
           <div class="card card-contato">
             <h3>
-              <span class="location"></span>
+              <span class="icon location"></span>
               Localização
             </h3>
             <p>
@@ -84,7 +104,7 @@
               </a>
             </p>
             <p>
-              <span class="phone" style="color: #0f0"></span
+              <span class="icon phone" style="color: #0f0"></span
               ><strong>Telefone:</strong>
               <a href="tel:+554432347076">(44) 3234 - 7076</a>
             </p>
@@ -112,7 +132,7 @@
         </article>
       </section>
       <section>
-        <h3><span class="book"></span>Etapas de Ensino</h3>
+        <h3><span class="icon book"></span>Etapas de Ensino</h3>
         <div class="cardsDeEnsino">
           <div class="card card-ensino card-alternado">
             <h2>Ensino Fundamental</h2>
@@ -185,8 +205,33 @@
         </div>
       </section>
     </main>
-    <footer></footer>
-    <script src="assets/js/script.js"></script>
+    <footer>
+      <section class="colégio">
+        <h3>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h3>
+        <p>Educação de qualidade em Astorga, Paraná</p>
+      </section>
+      <section class="accessibility">
+        <button onclick="toggleAccessibilityMenu()">
+          <span class="icon accessibility"></span>
+        </button>
+        <div class="accessibility-menu">
+          <button onclick="increaseFontSize()">
+            <span class="icon increase-font"></span>
+          </button>
+          <button onclick="decreaseFontSize()">
+            <span class="icon decrease-font"></span>
+          </button>
+          <button onclick="resetFontSize()">
+            <span class="icon reset-font"></span>
+          </button>
+        </div>
+      </section>
+      <section class="reference">
+        Site desenvolvido por José Luiz Bruiani Barco para fins acadêmicos.
+        Dados baseados no Censo Escolar e INEP.
+      </section>
+    </footer>
     <script src="assets/js/svg.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

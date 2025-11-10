@@ -15,68 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const contrasteAlto = getCookie("highContrast");
   if (contrasteAlto === "true") {
     document.body.classList.add("high-contrast");
+    const iconContrast = document.getElementById("iconContrast");
+    if (iconContrast) {
+      iconContrast.classList.remove("moon");
+      iconContrast.classList.add("sun");
+      updateContrastIcon();
+    }
+  } else {
+    updateContrastIcon();
   }
   const paginaAtual = getCookie("page");
   if (paginaAtual) {
     toggleContainer(`container-${paginaAtual}`);
   } else {
     toggleContainer("container-home");
-  }
-
-  // * Header
-  const header = document.querySelector("header");
-  if (header) {
-    header.innerHTML = `
-    <span class="college"></span>
-      <section class="location-info">
-        <h2>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h2>
-        <div class="location-info">
-          <p>
-            <span class="location"></span>
-            Astorga, Paraná, Brasil
-          </p>
-        </div>
-      </section>`;
-  }
-
-  // * Footer
-  const footer = document.querySelector("footer");
-  if (footer) {
-    footer.innerHTML = `
-      <section class="colégio">
-        <h3>Colégio Estadual Governador Adolpho de Oliveira Franco - EFMP</h3>
-        <p>Educação de qualidade em Astorga, Paraná</p>
-      </section>
-      <section class="accessibility">
-        <button onclick="toggleAccessibilityMenu()">
-          <span class="accessibility"></span>
-        </button>
-        <div class="accessibility-menu">
-          <button onclick="increaseFontSize()">
-            <span class="increase-font"></span>
-          </button>
-          <button onclick="decreaseFontSize()">
-            <span class="decrease-font"></span>
-          </button>
-          <button onclick="resetFontSize()">
-            <span class="reset-font"></span>
-          </button>
-          <button onclick="contrast()">
-            <span class="contrast"></span>
-          </button>
-        </div>
-      </section>
-      <section class="reference">
-        Site desenvolvido por José Luiz
-        Bruiani Barco para fins acadêmicos. Dados baseados no Censo Escolar e INEP.
-      </section>`;
-  }
-
-  // * Current Year
-  const currentYear = new Date().getFullYear();
-  const yearSpan = document.getElementById("currentYear");
-  if (yearSpan) {
-    yearSpan.textContent = currentYear;
   }
 });
 
@@ -146,12 +98,15 @@ function resetFontSize() {
 // * Contraste
 function contrast() {
   const body = document.body;
-  const isHighContrast = body.classList.toggle("high-contrast"); // Alterna a classe
-  document.cookie = `highContrast=${isHighContrast}; path=/; max-age=31536000`; // Salva o estado no cookie
-}
-document.addEventListener("DOMContentLoaded", () => {
-  const contrasteAlto = getCookie("highContrast");
-  if (contrasteAlto === "true") {
-    document.body.classList.add("high-contrast");
+  const isHighContrast = body.classList.toggle("high-contrast");
+  const iconContrast = document.getElementById("iconContrast");
+  if (isHighContrast) {
+    iconContrast.classList.remove("moon");
+    iconContrast.classList.add("sun");
+  } else {
+    iconContrast.classList.remove("sun");
+    iconContrast.classList.add("moon");
   }
-});
+  updateContrastIcon();
+  document.cookie = `highContrast=${isHighContrast}; path=/; max-age=31536000`;
+}
